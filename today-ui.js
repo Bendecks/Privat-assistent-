@@ -1,1 +1,1 @@
-(()=>{const load=(src,cb)=>{const s=document.createElement('script');s.src=src;s.onload=cb||null;document.head.appendChild(s)};load('family-v2.js',()=>load('week-grid.js'))})();
+(()=>{const load=(src,cb)=>{const s=document.createElement('script');s.src=src;s.onload=cb||null;document.head.appendChild(s)};load('family-v2.js',()=>load('week-grid.js',()=>load('inbox-ui.js')))})();
