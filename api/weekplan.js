@@ -1,10 +1,6 @@
 const { neon } = require('@neondatabase/serverless');
 const FIXED=[
- {key:'kampklar-daily',days:[1,2,3,4,5,6,0],time:'',title:'Tjek Kampklar for nye kampe, der skal tages stilling til',person:'Far'},
- {key:'aula-daily',days:[1,2,3,4,5,6,0],time:'',title:'Tjek Aula',person:'Far'},
- {key:'kampklar-mon',days:[1],time:'',title:'Meld til/fra tirsdagens fodbold i Kampklar',person:'Louie,Charlie'},
  {key:'football-tue',days:[2],time:'17:00',title:'Fodbold',person:'Louie,Charlie,Sylvester'},
- {key:'kampklar-wed',days:[3],time:'',title:'Meld til/fra torsdagens fodbold i Kampklar',person:'Louie,Charlie'},
  {key:'football-thu',days:[4],time:'17:00',title:'Fodbold',person:'Louie,Charlie'}
 ];
 async function db(){if(!process.env.DATABASE_URL)throw new Error('DATABASE_URL mangler');const sql=neon(process.env.DATABASE_URL);await sql`CREATE TABLE IF NOT EXISTS weekplan_items (id bigserial PRIMARY KEY, item_date date NOT NULL, item_time text NOT NULL DEFAULT '', title text NOT NULL, kind text NOT NULL DEFAULT 'egen', recurring boolean NOT NULL DEFAULT false, removed boolean NOT NULL DEFAULT false, created_at timestamptz NOT NULL DEFAULT now(), updated_at timestamptz NOT NULL DEFAULT now())`;await sql`ALTER TABLE weekplan_items ADD COLUMN IF NOT EXISTS person text NOT NULL DEFAULT 'Familie'`;await sql`CREATE TABLE IF NOT EXISTS weekplan_exclusions (rule_key text NOT NULL, item_date date NOT NULL, PRIMARY KEY(rule_key,item_date))`;const seeds=[['2026-09-05','10:00','Klassefødselsdag 10–14','Jonathan'],['2026-09-07','08:35','Tandlæge med Jonathan','Far'],['2026-09-07','08:35','Tandlæge','Jonathan']];for(const [date,time,title,person] of seeds){await sql`INSERT INTO weekplan_items(item_date,item_time,title,person) SELECT ${date}::date,${time},${title},${person} WHERE NOT EXISTS(SELECT 1 FROM weekplan_items WHERE item_date=${date}::date AND item_time=${time} AND title=${title} AND person=${person} AND removed=false)`}return sql}
