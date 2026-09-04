@@ -1,5 +1,7 @@
 const { neon } = require('@neondatabase/serverless');
 const FIXED=[
+ {key:'louie-idraet-mon',days:[1],time:'10:00',title:'Idræt · husk idrætstøj, håndklæde og badeting',person:'Louie'},
+ {key:'louie-library-fri',days:[5],time:'',title:'Husk biblioteksbøger',person:'Louie'},
  {key:'football-tue',days:[2],time:'17:00',title:'Fodbold',person:'Louie,Charlie,Sylvester'},
  {key:'football-thu',days:[4],time:'17:00',title:'Fodbold',person:'Louie,Charlie'}
 ];
