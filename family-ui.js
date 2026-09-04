@@ -1,0 +1,1 @@
+(()=>{const s=document.createElement('script');s.src='today-ui-legacy.js';document.head.appendChild(s)})();
