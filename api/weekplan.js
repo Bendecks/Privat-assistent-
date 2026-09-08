@@ -8,6 +8,7 @@ const FIXED=[
 const CALENDAR_SYNC=[
  {key:'_6oq48e1g6h1j4ba470o3ib9k8cp36b9p71134b9n6ss30d9l64skcc2270',date:'2026-09-08',time:'07:00',title:'Louie foto',person:'Louie'},
  {key:'_6gok6ca16p13eba68krj8b9k75344b9p8p1j4b9i74pkac9n6523ic1n8g',date:'2026-09-08',time:'20:00',title:'Biograf kl 11.30',person:'Far'},
+ {key:'_84q3echp61336b9k8cq3ib9k68q30b9p6l0j6b9o6os3ighp74q48gi46k',date:'2026-09-09',time:'10:00',title:'Onsdag d. 21. oktober',person:'Far,Mor'},
  {key:'work:_6kpjce1o6coj4',date:'2026-09-09',time:'14:30',title:'Arbejde 14.30–21.30',person:'Far'},
  {key:'_68qkcghj6l342b9i6kp46b9k8opk2ba189232b9h6crjgh248op3cgq364_20260910T180000Z',date:'2026-09-10',time:'20:00',title:'FREDAG Biblioteksbøger Jonathan og Charlie',person:'Jonathan,Charlie'},
  {key:'_6d1jedq668pj8ba66crkcb9k68o38b9o6d0j6ba36so3ec2274sjih1g64_20260910T180000Z',date:'2026-09-10',time:'20:00',title:'FREDAG Husk idrætstøj Jonathan',person:'Jonathan'},
